@@ -52,6 +52,7 @@ Topics included/covered
     - 1.2. [Layout modes](#12-layout-modes)
     - 1.3. [Why CSS Grid?](#13-why-css-grid)
     - 1.4. [Browser support](#14-browser-support)
+    - 1.5. [Important Terminology](#15-important-terminology)
 
 1 Introduction to CSS Grid
 =====================
@@ -68,7 +69,7 @@ Topics included/covered
 1.2. Layout modes
 ---------------------
 
-Before CSS there were 4 layout modes/models:
+Before CSS there were 5 layout modes/models:
 1. **`Block`** (for different sections in a webpage)
 2. **`Inline`** (for text and spans in the same line)
 3. **`Table`** (for two-dimensional tabular data)
@@ -83,6 +84,25 @@ Before CSS there were 4 layout modes/models:
 - we need to include another CSS mechanism like Floats, Vertical alignment of text/elements and other hacks with Margin, Padding to create the accurate/desired layout
 - `CSS Flexible Box Layout Module (Flexbox)`, makes it easier to design flexible responsive layout structure without using float or positioning
 
+1.3. Why CSS Grid?
+---------------------
+
+Grid/CSS Grid Layout provides lots of flexibilities while creating complex layouts like:
+- CSS Grid is a new way of creating layouts, the first time a proper layout system available natively in the browser with tons of benefits
+- Grid is a new CSS display type designed to craft CSS layouts in a much easier way
+- No CSS Float used
+- Helps to create a nested Grid layout and place them on a webpage
+- Arrange items from left to right or top to bottom and vice versa
+- Adjust the spacing between objects
+- Position and alignments of items
+- Order and placements of various elements 
+- Improve the items alignment, directions and order in the container even when they are with dynamic or even unknown size
+- Equal height columns
+- Ability to modify the width or height of its children to fill the available space in the best possible way on different screen sizes
+- Control the position, size, and spacing of child elements relative to parent container and other child elements
+- CSS Grid works great responsively (RWD - Responsive Web Design)
+- Responsive and Mobile friendly
+
 1.4. Browser support
 ---------------------
 
@@ -94,4 +114,23 @@ The CSS Grid properties are supported in all modern browsers:
     <figcaption>&nbsp;&nbsp;&nbsp; Image - CSS Grid browser support </figcaption>
   </figure>
 </p>
+
+1.5. Important Terminology
+---------------------
+
+Let's learn some of the Important Terminology/concepts related to CSS Grid Layout to get proper understandings and how does it work. Here are the main terms or entities while dealing with CSS Grid:
+- **`display:grid`** (CSS property/style which converts an HTML element to a grid container - *`display: grid or inline-grid`*)
+1. **`Grid Container`** (Direct Parent/Container to hold sub-items, to the container we apply *` display: grid or inline-grid`* property)
+2. **`Grid Items`** (Child/sub-items [direct descendants] within Container - All direct children of the `grid container` automatically become `grid items`)
+3. **`Grid Column`** (The vertical series-part/portrait lines of the grid, table, chart or spreadsheet)
+4. **`Grid Row`** (The horizontal series-part/landscape lines of grid, table, chart or spreadsheet)
+5. **`Grid Gaps`** (The spaces (margin or cell-spacing) between each column/row)
+6. **`Grid Line`** (The lines between columns/rows, the dividing lines that make up the structure of the grid )
+7. **`Grid Track`** (A grid track is a space between 2 adjacent grid lines, they are the rows and columns of your grid)
+8. **`Grid Cell`** (A box/intersection point where the column and row get insects it creates a box/cell like a table cell, A grid cell is the space between 2 adjacent row grid lines and 2 adjacent column grid lines)
+9. **`Grid Area`** (The total space surrounded by four grid lines, A grid area is made up of 1 or more grid cells, and is bound by 4 grid lines on each side of the grid area)
+10. **`The fr Unit`** (The new `fr unit` represents a fraction of the available space in the grid container)
+
+To start with CSS Grid just apply a property `display` type of `grid` to the parent container/Grid Container (grid container), so Grid Items/child items/elements automatically turn to the grid item.
+
 
