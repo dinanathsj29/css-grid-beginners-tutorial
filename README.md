@@ -34,10 +34,10 @@ Course/Tutorial Goal
 
 After completing/attending/finishing this Course/Tutorial, participants should be able to: 
 - Align/arrange elements using modern CSS module, like CSS Grid 
- - Create Complex grid-based web layouts
+- Create Complex grid-based web layouts
 - Use the new CSS3 Grid model to create responsive web layouts more effectively!
 - Use/Operate CSS Grid confidently to create modern/advanced layouts
- - implement complete complex-nested site layouts / create modern grids
+- implement complete complex-nested site layouts / create modern grids
 
 Prerequisites for current course / What you need to know
 ---------------------
@@ -91,6 +91,7 @@ Grid/CSS Grid Layout provides lots of flexibilities while creating complex layou
 - CSS Grid is a new way of creating layouts, the first time a proper layout system available natively in the browser with tons of benefits
 - Grid is a new CSS display type designed to craft CSS layouts in a much easier way
 - No CSS Float used
+- Offers ultimate flexibility to create complex layouts without using extra markup or containers or floats
 - Helps to create a nested Grid layout and place them on a webpage
 - Arrange items from left to right or top to bottom and vice versa
 - Adjust the spacing between objects
@@ -122,15 +123,118 @@ Let's learn some of the Important Terminology/concepts related to CSS Grid Layou
 - **`display:grid`** (CSS property/style which converts an HTML element to a grid container - *`display: grid or inline-grid`*)
 1. **`Grid Container`** (Direct Parent/Container to hold sub-items, to the container we apply *` display: grid or inline-grid`* property)
 2. **`Grid Items`** (Child/sub-items [direct descendants] within Container - All direct children of the `grid container` automatically become `grid items`)
-3. **`Grid Column`** (The vertical series-part/portrait lines of the grid, table, chart or spreadsheet)
-4. **`Grid Row`** (The horizontal series-part/landscape lines of grid, table, chart or spreadsheet)
-5. **`Grid Gaps`** (The spaces (margin or cell-spacing) between each column/row)
-6. **`Grid Line`** (The lines between columns/rows, the dividing lines that make up the structure of the grid )
+3. **`Grid Column`** (The vertical series-part/portrait lines of the grid, table, chart or spreadsheet. CSS property is *`grid-template-columns`*)
+4. **`Grid Row`** (The horizontal series-part/landscape lines of the grid, table, chart or spreadsheet. CSS property is *`grid-template-rows`*)
+5. **`Grid Gaps`** (The spaces (margin or cell-spacing) between each column/row. CSS property is *`grid-column-gap` and `grid-row-gap`*)
+6. **`Grid Line`** (The lines between columns/rows, the dividing lines that make up the structure of the grid. CSS property is *`grid-column-start`, `grid-column-end` and `grid-row-start`, `grid-row-end`*)
 7. **`Grid Track`** (A grid track is a space between 2 adjacent grid lines, they are the rows and columns of your grid)
 8. **`Grid Cell`** (A box/intersection point where the column and row get insects it creates a box/cell like a table cell, A grid cell is the space between 2 adjacent row grid lines and 2 adjacent column grid lines)
-9. **`Grid Area`** (The total space surrounded by four grid lines, A grid area is made up of 1 or more grid cells, and is bound by 4 grid lines on each side of the grid area)
-10. **`The fr Unit`** (The new `fr unit` represents a fraction of the available space in the grid container)
+9. **`Grid Area`** (The total space surrounded by four grid lines, A grid area is made up of 1 or more grid cells, and is bound by 4 grid lines on each side of the grid area. CSS property is *grid-item = `grid-area`, grid-container = `grid-template-areas`*)
+10. **`The fr Unit`** (The new `fr unit` represents a fraction of the available space in the grid container. CSS property is *`grid-template-columns/rows: 1fr 1fr 1fr`*)
 
 To start with CSS Grid just apply a property `display` type of `grid` to the parent container/Grid Container (grid container), so Grid Items/child items/elements automatically turn to the grid item.
 
+> **Syntax & Example**: `1.5-grid-container-item.html basic markup`
 
+```html
+ <div class="main-container">
+  <div class="item item-1">item-1</div>
+  <div class="item item-2">item-2</div>
+  <div class="item item-3">item-3</div>
+  <div class="item item-4">item-4</div>
+  <div class="item item-5">item-5</div>
+  <div class="item item-6">item-6</div>
+  <div class="item item-7">item-7</div>
+  <div class="item item-8">item-8</div>
+  <div class="item item-9">item-9</div>
+</div>
+```
+
+<hr/>
+
+> **Syntax & Example**: `1.5-grid-container-item.html default markup and output`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.5-grid-container-item.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        margin: 0 auto;
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/1.5-grid-container-item-1-default.png" alt="Grid parent container and grid child item markup" title="Grid parent container and grid child item markup" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Grid parent container and grid child item markup </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `1.5-flex-container-item.html display:grid`
+
+```html
+<style type="text/css">
+  .main-container {
+    border: 4px solid #826a98;
+    margin: 0 auto;
+
+    display: grid; /* block level grid container */
+    /* display: inline-grid; */ /* inline grid container */
+  }
+</style>
+```
