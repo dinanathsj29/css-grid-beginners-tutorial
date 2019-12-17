@@ -55,7 +55,8 @@ Topics included/covered
     - 1.5. [Important Terminology](#15-important-terminology)
     
 2. [CSS Grid Container Properties](#2-css-grid-container-properties)
-
+    
+    - 2.1. [Grid Display](#21-grid-display)
 
 1 Introduction to CSS Grid
 =====================
@@ -284,3 +285,119 @@ Let's look into some of the important properties used with Grid Container:
 - **`grid`**
   - Shorthand for setting properties like: *grid-template-rows*, *grid-template-columns*, *grid-template-areas*, *grid-auto-rows*, *grid-auto-columns*, and *grid-auto-flow* in a single declaration
   
+2.1. Grid Display
+---------------------
+
+- To create a grid container, we set the value of the container's `display` property to `grid` or `inline-grid`
+- It creates/builds a `grid formatting context` for its content. It only applies to direct child elements and does ***not extend*** to grandchild elements and beyond
+
+`display` property creates either a `block-level` or `inline-level` grid container:
+- **`display: grid`**;
+  - block level grid, covers 100% width
+- **`display: inline-grid`**;
+  - inline-level, same line grid, covers only required width as per items width
+- syntax:
+```css 
+.container {
+  /* display: grid; */ /* block level grid container */
+  /* display: inline-grid; */ /* inline grid container */
+
+  display : grid | inline-grid; 
+}
+```
+
+> **Syntax & Example**: `2.1-grid-display.html,  display: grid; /* block level grid container */`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.1-grid-display</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+        /* display: inline-grid; */ /* inline grid container */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <!-- <div class="item item-10">item-10</div> -->
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.1.1-grid-container-display-grid.png" alt="display: grid;" title="display: grid;" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - display: grid; </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `2.1-grid-display.html,  display: inline-grid; /* inline grid container */`
+
+```css
+.main-container {
+  border: 4px solid #826a98;
+  margin: 0 auto;
+
+  /*  display: grid; */ /* block level grid container */
+  display: inline-grid; /* inline grid container */
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.1.2-grid-container-display-inline-grid.png" alt="display: inline-grid;" title="display: inline-grid;" width="100" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - display: inline-grid; </figcaption>
+  </figure>
+</p>
+
