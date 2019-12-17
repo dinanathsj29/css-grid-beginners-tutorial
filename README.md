@@ -53,6 +53,9 @@ Topics included/covered
     - 1.3. [Why CSS Grid?](#13-why-css-grid)
     - 1.4. [Browser support](#14-browser-support)
     - 1.5. [Important Terminology](#15-important-terminology)
+    
+2. [CSS Grid Container Properties](#2-css-grid-container-properties)
+
 
 1 Introduction to CSS Grid
 =====================
@@ -238,3 +241,46 @@ To start with CSS Grid just apply a property `display` type of `grid` to the par
   }
 </style>
 ```
+
+2 CSS Grid Container Properties 
+===================== 
+
+Let's look into some of the important properties used with Grid Container:
+- **`display`**
+  - It defines the Grid Container inline or block
+  - An important and mandatory property to work with CSS Grid
+- **`grid-template-columns`** 
+  - Defines/specify grid track list for all the columns in the grid with *grid tracks* and *line names*
+- **`grid-template-rows`**
+  - Defines/specify grid track list for all the rows in the grid with *grid tracks* and *line names*
+- **`grid-template-areas`**
+  - Defines a grid template by referencing the names of the grid areas which are specified/named with the *grid-area* property for visualisation of the grid structure
+- **`grid-template`**
+  - Short-hand property for defining/setting a combination of *grid-template-columns*, *grid-template-rows* and *grid-template-areas*
+- **`grid-column-gap`**
+  - The spaces (margin or cell-spacing or gutter) between each column/row, it specifies the size of the grid lines
+- **`grid-row-gap`**
+  - The spaces (margin or cell-spacing or gutter) between each row/column, it specifies the size of the grid lines
+- **`grid-gap`**
+  - Shorthand property for setting *grid-row-gap* and *grid-column-gap* in a single declaration
+- **`justify-items`**
+  - Defines alignment of items along the main ie. inline (row) axis (horizontal)
+- **`align-items`**
+  - Defines how grid items layout/laid out with the cross ie. block (column) axis (vertical)
+- **`place-items`**
+  - place-items sets both the *align-items (columner or vertical)*  and *justify-items (row or horizontal)* properties in a single declaration
+- **`justify-content`**
+  - Defines alignment of items (distributes space between grid items) along the main axis (horizontal)
+- **`align-content`**
+  - Defines alignment of items (distributes space between grid items) along the cross axis (vertical)
+- **`place-content`**
+  - Shorthand CSS property for *align-content* and *justify-content* in a single declaration
+- **`grid-auto-columns`**
+  - Specifies the size of any auto-generated grid tracks ie. implicit grid tracks columns
+- **`grid-auto-rows`**
+  - Specifies the size of any auto-generated grid tracks ie. implicit grid tracks rows
+- **`grid-auto-flow`**
+  - Controls/adjust how the automatic placement of grid items work when they are not explicitly positioned with any grid-placement properties
+- **`grid`**
+  - Shorthand for setting properties like: *grid-template-rows*, *grid-template-columns*, *grid-template-areas*, *grid-auto-rows*, *grid-auto-columns*, and *grid-auto-flow* in a single declaration
+  
