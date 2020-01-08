@@ -57,6 +57,7 @@ Topics included/covered
 2. [CSS Grid Container Properties](#2-css-grid-container-properties)
     
     - 2.1. [Grid Display](#21-grid-display)
+    - 2.2. [Grid Template Columns](#22-grid-template-columns)
 
 1 Introduction to CSS Grid
 =====================
@@ -401,3 +402,119 @@ Let's look into some of the important properties used with Grid Container:
   </figure>
 </p>
 
+2.2. Grid Template Columns
+---------------------
+2.2. grid-template-columns
+---------------------
+
+- The vertical series-part/portrait lines of the grid, table, chart or spreadsheet are known/called as `columns`. CSS property to create columns is *`grid-template-columns`*
+- `grid-template-columns` property defines the columns of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line
+- It simply defines/specify grid track list for all the columns in the grid with *grid tracks* and *line names*
+- syntax:
+```css 
+.container {
+  /*grid-template-columns: <track-size> | <line-name> <track-size>; */
+
+  /* grid-template-columns: 150px 350px 480px; */ /* 3 columns in grid with different width - in pixel */
+  /* grid-template-columns: 15% 35% 48%; */ /* width - in percentage */
+  grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto/available space */
+}
+```
+
+> **Syntax & Example**: `2.2-grid-template-columns-width-px-auto.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.2-grid-template-columns-width-px-auto.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+        /* display: inline-grid; */ /* inline level grid container */
+
+        /* grid-template-columns: 150px 350px 500px; */ /* 3 columns grid with different width - in pixel */
+        /* grid-template-columns: 15% 35% 50%; */ /* width - in percentage */
+        grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <!-- <div class="item item-10">item-10</div> -->
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.2.1-grid-template-columns-width-px.png" alt="grid-template-columns: 150px 350px 500px; /* 3 columns in grid with different width - in pixel */" title="grid-template-columns: 150px 350px 500px; /* 3 columns in grid with different width - in pixel */" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: 150px 350px 500px; /* 3 columns in grid with different width - in pixel */ </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.2.2-grid-template-columns-width-percentage.png" alt="grid-template-columns: 15% 35% 50%; /* width - in percentage */" title="grid-template-columns: 15% 35% 50%; /* width - in percentage */" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: 15% 35% 50%; /* width - in percentage */ </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.2.3-grid-template-columns-width-auto.png" alt="grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto */" title="grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto */" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto */ </figcaption>
+  </figure>
+</p>
