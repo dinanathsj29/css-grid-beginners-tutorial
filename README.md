@@ -58,6 +58,7 @@ Topics included/covered
     
     - 2.1. [Grid Display](#21-grid-display)
     - 2.2. [Grid Template Columns](#22-grid-template-columns)
+    - 2.3. [The fr Unit](#23-the-fr-unit)
 
 1 Introduction to CSS Grid
 =====================
@@ -516,5 +517,113 @@ Let's look into some of the important properties used with Grid Container:
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.2.3-grid-template-columns-width-auto.png" alt="grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto */" title="grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto */" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: 150px 35% auto; /* width - in combination on pixel, percentage and auto */ </figcaption>
+  </figure>
+</p>
+
+2.3. The fr Unit
+---------------------
+2.3. The fr fractional Unit
+---------------------
+
+- When sizing rows and columns, one can use different CSS lengths like px, % percentage, rem, auto (like 250px or 20%) and perhaps the most useful and important one is `fr` ie. the `fractional units`
+- `fr` ie. the `fractional units` is a flexible length, declared using the `fr`, which takes up a share of the remaining free space in proportion to its flex factor 
+- The new `fr Unit` represents a fraction of the available space in the grid container
+- Example: Given a grid container of `1000px with 3 columns` of `200px, 2fr and 3fr` respectively. The flexibly sized columns will take up the remaining `800px` in the ratio of `2:3` (remaining 800px divided into 5 equal parts of 160px each), so the second column takes up 320px and the third column takes up 480px
+- CSS property is *`grid-template-columns/rows: 1fr 1fr 1fr`*)
+- syntax:
+```css 
+.container {
+  /*grid-template-columns: <track-size> | <line-name> <track-size>; */
+
+  grid-template-columns: 200px 2fr 3fr; /* fr/fraction = proportionate size/space ie. 200px 320px 48px */
+  /* grid-template-columns: 1fr 200px; */ /* fr/fraction = proportionate size/space ie. 88px 200px */
+}
+```
+
+> **Syntax & Example**: `2.3-grid-template-columns-width-fr-fraction-unit.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.3-grid-template-columns-width-fr-fraction-unit.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+        /* display: inline-grid; */ /* inline level grid container */
+
+        grid-template-columns: 200px 2fr 3fr; /* fr/fraction = proportionate size/space ie. 200px 320px 48px */
+        /* grid-template-columns: 1fr 200px; */ /* fr/fraction = proportionate size/space ie. 800px 200px */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+    
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <!-- <div class="item item-10">item-10</div> -->
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.3.1-grid-template-columns-width-fr-fraction-unit.png" alt="grid-template-columns: 200px 2fr 3fr; /* fr/fraction = proportionate size/space ie. 200px 320px 48px */" title="grid-template-columns: 200px 2fr 3fr; /* fr/fraction = proportionate size/space ie. 200px 320px 48px */" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: 200px 2fr 3fr; /* fr/fraction = proportionate size/space ie. 200px 320px 48px */ </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.3.2-grid-template-columns-width-fr-fraction-unit.png" alt="grid-template-columns: 1fr 200px; /* fr/fraction = proportionate size/space ie. 800px 200px */" title="grid-template-columns: 1fr 200px; /* fr/fraction = proportionate size/space ie. 800px 200px */" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: 1fr 200px; /* fr/fraction = proportionate size/space ie. 800px 200px */ </figcaption>
   </figure>
 </p>
