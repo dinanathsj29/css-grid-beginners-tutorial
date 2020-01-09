@@ -59,6 +59,7 @@ Topics included/covered
     - 2.1. [Grid Display](#21-grid-display)
     - 2.2. [Grid Template Columns](#22-grid-template-columns)
     - 2.3. [The fr Unit](#23-the-fr-unit)
+    - 2.4. [The repeat() function](#24-the-repeat()-function)
 
 1 Introduction to CSS Grid
 =====================
@@ -410,7 +411,7 @@ Let's look into some of the important properties used with Grid Container:
 
 - The vertical series-part/portrait lines of the grid, table, chart or spreadsheet are known/called as `columns`. CSS property to create columns is *`grid-template-columns`*
 - `grid-template-columns` property defines the columns of the grid with a space-separated list of values. The values represent the track size, and the space between them represents the grid line
-- It simply defines/specify grid track list for all the columns in the grid with *grid tracks* and *line names*
+- It simply defines/specify number of columns in grid layout (how many columns we want in the grid) with grid track list for all the columns in the grid with *grid tracks* and *line names*
 - syntax:
 ```css 
 .container {
@@ -625,5 +626,193 @@ Let's look into some of the important properties used with Grid Container:
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.3.2-grid-template-columns-width-fr-fraction-unit.png" alt="grid-template-columns: 1fr 200px; /* fr/fraction = proportionate size/space ie. 800px 200px */" title="grid-template-columns: 1fr 200px; /* fr/fraction = proportionate size/space ie. 800px 200px */" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: 1fr 200px; /* fr/fraction = proportionate size/space ie. 800px 200px */ </figcaption>
+  </figure>
+</p>
+
+2.4. The repeat() function
+---------------------
+2.4. The repeat function
+---------------------
+
+- The `repeat() function` allows us to repeat/iterate something (columns or rows) n number of times
+- We can use the `repeat() notation` to define repeating parts while declaring columns or rows and save some typing
+- CSS property is *`grid-template-columns/rows: repeat(2, 1fr)`*)
+- syntax:
+```css 
+.container {
+  /*grid-template-columns: <track-size> | <line-name> <track-size>; */
+
+  grid-template-columns: repeat(2, 1fr); /* 2 columns of 1fr each of equal width */
+}
+```
+
+> **Syntax & Example**: `2.4.1-grid-template-columns-repeat.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.4.1-grid-template-columns-repeat.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+       /* display: inline-grid; */ /* inline level grid container */
+
+        grid-template-columns: repeat(2, 1fr); /* 2 columns of 1fr each of equal width */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <div class="item item-10">item-10</div>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.4.1-grid-template-columns-repeat.png" alt="grid-template-columns: repeat(2, 1fr); /* 2 columns of 1fr each of equal width */" title="grid-template-columns: repeat(2, 1fr); /* 2 columns of 1fr each of equal width */" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: repeat(2, 1fr); /* 2 columns of 1fr each of equal width */ </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `2.4.2-grid-template-columns-repeat.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.4.2-grid-template-columns-repeat.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+        /* display: inline-grid; */ /* inline level grid container */
+ 
+        grid-template-columns: repeat(1, 1fr 2fr 1fr); /* repeate 3 columns 1 time and create 3 columns of different width */
+
+        /* grid-template-columns: repeat(6, 1fr 2fr); */ /* repeate 2 columns 6 times = create 12 columns of different width */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <div class="item item-10">item-10</div>
+      <div class="item item-11">item-11</div>
+      <div class="item item-12">item-12</div>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.4.2.1-grid-template-columns-repeat.png" alt="grid-template-columns: repeat(1, 1fr 2fr 1fr); /* repeate 3 columns 1 time and create 3 columns of different width" title="grid-template-columns: repeat(1, 1fr 2fr 1fr); /* repeate 3 columns 1 time and create 3 columns of different width" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: repeat(1, 1fr 2fr 1fr); /* repeate 3 columns 1 time and create 3 columns of different width </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.4.2.2-grid-template-columns-repeat.png" alt="grid-template-columns: repeat(6, 1fr 2fr); /* repeate 2 columns 6 times = create 12 columns of different width */" title="grid-template-columns: repeat(6, 1fr 2fr); /* repeate 2 columns 6 times = create 12 columns of different width */" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-columns: repeat(6, 1fr 2fr); /* repeate 2 columns 6 times = create 12 columns of different width */ </figcaption>
   </figure>
 </p>
