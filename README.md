@@ -63,6 +63,7 @@ Topics included/covered
     - 2.6. [Grid Column Gap](#26-grid-column-gap)
     - 2.7. [Grid Row Gap](#27-grid-row-gap)
     - 2.8. [Grid Gap](#28-grid-gap)
+    - 2.9. [Grid Template Areas](#29-grid-template-areas)
 
 1 Introduction to CSS Grid
 =====================
@@ -263,7 +264,7 @@ Let's look into some of the important properties used with Grid Container:
 - **`grid-template-areas`**
   - Defines a grid template by referencing the names of the grid areas which are specified/named with the *grid-area* property for visualisation of the grid structure
 - **`grid-template`**
-  - Short-hand property for defining/setting a combination of *grid-template-columns*, *grid-template-rows* and *grid-template-areas*
+  - Shorthand property for defining/setting a combination of *grid-template-columns*, *grid-template-rows* and *grid-template-areas*
 - **`grid-column-gap`**
   - The spaces (margin or cell-spacing or gutter) between each column/row, it specifies the size of the grid lines
 - **`grid-row-gap`**
@@ -1336,3 +1337,195 @@ Let's look into some of the important properties used with Grid Container:
         grid-gap: 20px 10px; </figcaption>
   </figure>
 </p>
+
+2.9. Grid Template Areas
+---------------------
+
+- Defines a grid template by referencing the names of the grid areas which are specified/named with the *`grid-area`* property for visualisation of the grid structure
+- This property defines `named grid areas` and provides a visualisation of the grid structure, which may help and significantly make underlying code easier to understand
+- Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell
+- syntax:
+```css
+.container {
+  
+  grid-template-areas: 
+    "<grid-area-name> | . | none | ..."
+    "...";
+  
+  - <grid-area-name> - the name of a grid area specified with grid-area
+  - . - a period signifies an empty grid cell
+  - none - no grid areas are defined
+}
+```
+
+> **Syntax & Example**: `2.9.1-grid-template-area-web-layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.9.1-grid-template-area-web-layout.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 980px;
+        margin: 0 auto;
+      
+        display: grid; /* block level grid container */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        
+        grid-template-areas: 
+          "headerArea headerArea headerArea headerArea"
+          "mainArea mainArea asideArea asideArea"
+          "mainArea mainArea navArea navArea"
+          "sectionArea sectionArea sectionArea sectionArea"
+          "footerArea footerArea footerArea footerArea";
+      }
+
+      .main-container > * {
+        background-color: #00bcd4;
+        padding: 20px;
+      }
+
+      .header-section {
+        grid-area: headerArea;
+        background-color: #0199ad;
+      }
+
+      .main-section {
+        grid-area: mainArea;
+      }
+
+      .section {
+        grid-area: sectionArea;
+      }
+
+      .aside-section {
+        grid-area: asideArea;
+      }
+
+      .nav-section {
+        grid-area: navArea;
+      }
+
+      .footer-section {
+        grid-area: footerArea;
+        background-color: #0199ad;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <header class="header-section"><h1>Header Section</h1></header>
+      <main class="main-section">Main Section</main>
+      <section class="section">Section Section</section>
+      <aside class="aside-section">Aside Section</aside>
+      <nav class="nav-section">Nav Section</nav>
+      <footer class="footer-section"><small>Footer Section</small></footer>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.9.1-grid-template-area-web-layout.png" alt="grid-template-areas and grid-area" title="grid-template-areas and grid-area" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-areas and grid-area </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `2.9.2-grid-template-area-web-layout.html`
+
+```css
+.main-container {
+  width: 980px;
+  margin: 0 auto;
+
+  display: grid; /* block level grid container */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(80px, auto);
+  grid-gap: 20px;
+  
+  grid-template-areas: 
+    "headerArea headerArea headerArea headerArea"
+    "asideArea asideArea mainArea mainArea "
+    "navArea navArea mainArea mainArea "
+    "sectionArea sectionArea sectionArea sectionArea"
+    "sectionArea sectionArea sectionArea sectionArea"
+    "footerArea footerArea footerArea footerArea";
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.9.2-grid-template-area-web-layout.png" alt="grid-template-areas and grid-area" title="grid-template-areas and grid-area" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-areas and grid-area </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `2.9.3-grid-template-area-web-layout-empty-cell-area.html`
+
+```css
+.main-container {
+  width: 980px;
+  margin: 0 auto;
+
+  display: grid; /* block level grid container */
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(80px, auto);
+  grid-gap: 20px;
+  
+  grid-template-areas: 
+    "headerArea headerArea headerArea headerArea"
+    "asideArea . mainArea mainArea "
+    ". . mainArea mainArea "
+    "navArea . sectionArea sectionArea"
+    ". . sectionArea sectionArea"
+    "footerArea footerArea footerArea footerArea";
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.9.3.1-grid-template-area-web-layout-empty-cell-area.png" alt="grid-template-areas and grid-area with dot (an empty cell/area) " title="grid-template-areas and grid-area with dot (an empty cell/area) " width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-areas and grid-area with dot (an empty cell/area)  </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.9.3.2-grid-template-area-web-layout-empty-cell-area.png" alt="grid-template-areas and grid-area with dot (an empty cell/area) " title="grid-template-areas and grid-area with dot (an empty cell/area) " width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-areas and grid-area with dot (an empty cell/area)  </figcaption>
+  </figure>
+</p>
+
+
