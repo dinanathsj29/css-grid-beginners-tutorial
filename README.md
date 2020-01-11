@@ -66,6 +66,8 @@ Topics included/covered
     - 2.9. [Grid Template Areas](#29-grid-template-areas)
     - 2.10. [Grid Template](#210-grid-template)
 
+3. [CSS Grid Item Properties](#3-css-grid-item-properties)
+
 1 Introduction to CSS Grid
 =====================
 
@@ -1543,3 +1545,33 @@ Let's look into some of the important properties used with Grid Container:
   - none - sets all three properties to their initial values
 }
 ```
+
+3 CSS Grid Item Properties
+===================== 
+
+Let us look into the some of the important properties used with and applicable to Grid Item or Child Elements (usually known as `Items`, present inside Grid container):
+- **`grid-column-start`**
+    - Determines/indicates the column grid line where the grid item starts
+    - Specifies a grid item's start position/location within the grid column
+- **`grid-column-end`** 
+    - Determines/indicates the column grid line where the grid item ends
+    - Specifies a grid item's end position/location within the grid column
+- **`grid-row-start`**
+    - Determines/indicates the row grid line where the grid item starts
+    - Specifies a grid item's start position/location within the grid row
+- **`grid-row-end`**
+    - Determines/indicates the row grid line where the grid item ends
+    - Specifies a grid item's end position/location within the grid row
+- **`grid-column`**
+    - Shorthand property that sets the start line and end line *grid-column-start* and *grid-column-end* for the respective dimensions in the same declaration
+- **`grid-row`**
+    - Shorthand property that sets the start line and end line *grid-row-start* and *grid-row-end* for the respective dimensions in the same declaration
+- **`grid-area`**
+    - Gives an item a name so that it can be referenced by a template created with the containers *grid-template-areas* property
+    - Alternatively its shorthand property for *grid-row-start*, *grid-column-start*, *grid-row-end* and *grid-column-end*
+- **`justify-self`**
+    - Aligns a grid item inside a cell along the inline (row) axis, this value applies to a grid item inside a single cell
+- **`align-self`**
+    - Aligns a grid item inside a cell along the block (column), this value applies to the content inside a single grid item
+- **`place-self`**
+    -  Shorthand property sets both the *align-self* and *justify-self* properties
