@@ -64,6 +64,7 @@ Topics included/covered
     - 2.7. [Grid Row Gap](#27-grid-row-gap)
     - 2.8. [Grid Gap](#28-grid-gap)
     - 2.9. [Grid Template Areas](#29-grid-template-areas)
+    - 2.10. [Grid Template](#210-grid-template)
 
 1 Introduction to CSS Grid
 =====================
@@ -1528,4 +1529,17 @@ Let's look into some of the important properties used with Grid Container:
   </figure>
 </p>
 
+2.10. Grid Template
+---------------------
 
+- A shorthand property for defining/setting a combination of *grid-template-columns*, *grid-template-rows* and *grid-template-areas
+- `grid-template` property is a shorthand for setting properties like `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` in a single declaration
+- syntax:
+```css
+.container {
+  
+  grid-template: none | <grid-template-rows> / <grid-template-columns> | <grid-template-areas>;
+  
+  - none - sets all three properties to their initial values
+}
+```
