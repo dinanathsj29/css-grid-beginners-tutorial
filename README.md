@@ -60,6 +60,9 @@ Topics included/covered
     - 2.3. [The fr Unit](#23-the-fr-unit)
     - 2.4. [The repeat() function](#24-the-repeat-function)
     - 2.5. [Grid Template Rows](#25-grid-template-rows)
+    - 2.6. [Grid Column Gap](#26-grid-column-gap)
+    - 2.7. [Grid Row Gap](#27-grid-row-gap)
+    - 2.8. [Grid Gap](#28-grid-gap)
 
 1 Introduction to CSS Grid
 =====================
@@ -832,7 +835,7 @@ Let's look into some of the important properties used with Grid Container:
 - syntax:
 ```css 
 .container {
-  /*grid-template-columns: <track-size> | <line-name> <track-size>; */
+  /*grid-template-rows: <track-size> | <line-name> <track-size>; */
 
   grid-template-rows: 100px 300px 100px; /* defines the height of each row - in pixel */
   /* grid-template-rows: 20% 60% 20%; */ /* height of each row - in percentage */
@@ -1031,5 +1034,305 @@ Let's look into some of the important properties used with Grid Container:
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.5.2.1-grid-template-rows-height-minmax.png" alt="grid-template-rows: repeat(3, minmax(50px, auto)); /* repeat the rows with minimum height of 50px and maximum auto */" title="grid-template-rows: repeat(3, minmax(50px, auto)); /* repeat the rows with minimum height of 50px and maximum auto */" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-template-rows: repeat(3, minmax(50px, auto)); /* repeat the rows with minimum height of 50px and maximum auto */ </figcaption>
+  </figure>
+</p>
+
+2.6. Grid Column Gap
+---------------------
+
+- The spaces (margin or cell-spacing or gutter) between each column, it specifies the size of the grid lines. We can think of it like setting the width of the gutters/margin/spacing between the columns
+> **Note**: When we apply Margin to grid item/child it by default applies to all sides as well as outside of grid item/child so eventually to grid container - to avoid this unwanted gaps we must use and apply `grid-column-gap or grid-row-gap or grid-gap` property
+- syntax:
+```css
+.container {
+  grid-column-gap: <line-size>;
+
+  grid-column-gap: 10px;
+}
+```
+
+> **Syntax & Example**: `2.6-grid-column-gap.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.6-grid-column-gap.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+       /* display: inline-grid; */ /* inline level grid container */
+
+        grid-column-gap: 10px;
+        /* grid-row-gap: 10px; */
+        /* grid-gap: 10px; */
+
+        grid-template-columns: 150px 35% auto; /* width - in combination of pixel, percentage and auto */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <!-- <div class="item item-10">item-10</div> -->
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.6-grid-column-gap.png" alt="grid-column-gap: 10px;" title="grid-column-gap: 10px;" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-column-gap: 10px; </figcaption>
+  </figure>
+</p>
+
+2.7. Grid Row Gap
+---------------------
+
+- The spaces (margin or cell-spacing or gutter) between each row, it specifies the size of the grid lines. We can think of it like setting the width of the gutters/margin/spacing between the rows
+- syntax:
+```css
+.container {
+  grid-row-gap: <line-size>;
+
+  grid-row-gap: 10px;
+}
+```
+
+> **Syntax & Example**: `2.7-grid-row-gap.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.7-grid-row-gap</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+       /* display: inline-grid; */ /* inline level grid container */
+
+        /* grid-column-gap: 10px; */
+        grid-row-gap: 10px;
+        /* grid-gap: 10px; */
+
+        grid-template-columns: 150px 35% auto; /* width - in combination of pixel, percentage and auto */
+
+        grid-template-rows: 100px 70px 100px; /* row height in pixel */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <!-- <div class="item item-10">item-10</div> -->
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.7-grid-row-gap.png" alt="grid-row-gap: 10px;" title="grid-row-gap: 10px;" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-row-gap: 10px; </figcaption>
+  </figure>
+</p>
+
+2.8. Grid Gap
+---------------------
+
+- A shorthand property for setting *grid-row-gap* and *grid-column-gap* in a single declaration. We can think of it like setting the width of the gutters/margin/spacing between the columns/rows
+- syntax:
+```css
+.container {
+  grid-gap: <grid-row-gap> <grid-column-gap>;
+
+  /* grid-column-gap: 10px;
+  grid-row-gap: 10px; */
+
+  /* grid-gap: 20px; */ /* single value for both row as well column gap */
+  grid-gap: 20px 10px;
+}
+```
+
+> **Syntax & Example**: `2.8-grid-gap.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.8-grid-gap.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        border: 4px solid #826a98;
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid; /* block level grid container */
+       /* display: inline-grid; */ /* inline level grid container */
+
+        grid-column-gap: 10px;
+        /* grid-row-gap: 10px; */
+
+        /* grid-gap: 20px; */ /* single value for both row as well column gap */
+        grid-gap: 20px 10px;
+
+        grid-template-columns: 150px 35% auto; /* width - in combination of pixel, percentage and auto */
+
+        grid-template-rows: 100px 70px 100px; /* row height in pixel */
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #8FBC8E;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #734F96;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+      <!-- <div class="item item-10">item-10</div> -->
+    </div>
+    
+  </body>
+  
+</html>
+
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.8-grid-gap.png" alt="/* grid-gap: 20px; */ /* single value for both row as well column gap */
+        grid-gap: 20px 10px;" title="/* grid-gap: 20px; */ /* single value for both row as well column gap */
+        grid-gap: 20px 10px;" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - /* grid-gap: 20px; */ /* single value for both row as well column gap */
+        grid-gap: 20px 10px; </figcaption>
   </figure>
 </p>
