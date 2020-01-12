@@ -72,6 +72,7 @@ Topics included/covered
     - 3.2. [Grid Lines - Rows](#32-grid-lines-rows)
     - 3.3. [Grid Lines - Grid Column](#33-grid-lines-grid-column)
     - 3.4. [Grid Lines - Grid Row](#34-grid-lines-grid-row)
+    - 3.5. [Alignment and Justifying items](#35-alignment-and-justifying-items)
 
 1 Introduction to CSS Grid
 =====================
@@ -2619,5 +2620,171 @@ Let us look into the some of the important properties used with and applicable t
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.4.2-grid-lines-grid-row-layout.png" alt="grid-row-start-end" title="grid-row-start-end" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-row-start-end </figcaption>
+  </figure>
+</p>
+
+3.5. Alignment and Justifying items
+---------------------
+3.5. Alignment & Justify items - justify-self & align-self
+---------------------
+
+- **`justify-self`**
+    - Aligns a grid item inside a cell along the inline (row - horizontal) axis, this value applies to a grid item inside a single cell
+- **`align-self`**
+    - Aligns a grid item inside a cell along the block (column - vertical), this value applies to the content inside a single grid item
+- syntax:
+```css 
+.grid-item {
+  justify-self: start | end | center | stretch;
+
+  align-self: start | end | center | stretch;
+}
+```
+
+> **Syntax & Example**: `3.5-grid-item-alignment-justify-align-self.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.5-grid-item-alignment-justify-align-self.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        width: 1000px;
+        margin: 0 auto;
+
+        /* 3.5.1 */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(200px, auto);
+        grid-gap: 10px;
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #ffa500;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #008080;
+      }
+
+      .item {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .main-container div:nth-child(odd) {
+        background: #ffa500;
+      }
+
+      .main-container div:nth-child(even) {
+        background: #008080;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+      <div class="item item-7">item-7</div>
+      <div class="item item-8">item-8</div>
+      <div class="item item-9">item-9</div>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.5.1-default-basic-alignment.png" alt="grid default basic alignment" title="grid default basic alignment" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid default basic alignment </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+```css
+.item-1 {
+  justify-self: end;
+  align-self: end;
+}
+
+.item-2 {
+  justify-self: center;
+  align-self: center;
+}
+
+.item-3 {
+  justify-self: start;
+  align-self: start;
+}
+
+.item-7 {
+  justify-self: end;
+  align-self: start;
+}
+
+.item-8 {
+  justify-self: center;
+  align-self: center;
+}
+
+.item-9 {
+  justify-self: start;
+  align-self: end;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.5.2-grid-design-justify-align.png" alt="grid design with justify and align" title="grid design with justify and align" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid design with justify and align </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+```css
+.main-container div:nth-child(odd) {
+  justify-self: center;
+  align-self: center;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.5.3-grid-design-justify-align.png" alt="grid design with justify and align" title="grid design with justify and align" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid design with justify and align </figcaption>
   </figure>
 </p>
