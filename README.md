@@ -69,6 +69,7 @@ Topics included/covered
 3. [CSS Grid Item Properties](#3-css-grid-item-properties)
     - 3.1. [Grid Lines - Columns](#31-grid-lines-columns)
     - 3.2. [Grid Lines - Rows](#32-grid-lines-rows)
+    - 3.3. [Grid Lines - Grid Column](#33-grid-lines-grid-column)
 
 1 Introduction to CSS Grid
 =====================
@@ -1995,5 +1996,194 @@ Let us look into the some of the important properties used with and applicable t
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.2.2.1-grid-lines-grid-row-start-end-web-layout.png" alt="grid-row-start, grid-row-end" title="grid-row-start, grid-row-end" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-row-start, grid-row-end </figcaption>
+  </figure>
+</p>
+
+3.3. Grid Lines Grid Column
+---------------------
+3.3. Grid Lines - Column grid-column
+---------------------
+
+- **`grid-column`**
+    - A shorthand property that sets the start line and end line *grid-column-start* and *grid-column-end* for the respective dimensions in the same declaration
+- syntax:
+```css 
+.grid-item {
+  grid-column: <start-line> / <end-line> | <start-line> / span <value>;
+
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+  
+  grid-column: 1/3;
+}
+```
+
+> **Syntax & Example**: `3.3.1-grid-lines-grid-column-layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.3.1-grid-lines-grid-column-layout.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 980px;
+        margin: 0 auto;
+      
+        display: grid; /* block level grid container */
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(4, minmax(70px, auto));
+        grid-gap: 20px;
+      }
+
+      .main-container > * {
+        background-color: #ff7f50;
+        padding: 20px;
+      }
+
+      .header-section {
+        background-color: #e03f00;
+        /* grid-column-start: 1;
+        grid-column-end: 7; */
+        grid-column: 1/7;
+      }
+
+      .main-section {
+       /*  grid-column-start: 1;
+        grid-column-end: 5; */
+        grid-column:1/5;
+      }
+      
+      .aside-section {
+       /*  grid-column-start: 5;
+        grid-column-end: 7; */
+        grid-column: 5/7;
+      }
+
+      .nav-section {
+        /* grid-column-start: 1;
+        grid-column-end: 3; */
+        grid-column: 1/3;
+      }
+
+      .section {
+        /* grid-column-start: 3;
+        grid-column-end: 7; */
+        grid-column: 3/7;
+      }
+
+      .footer-section {
+        background-color: #e03f00;
+        /* grid-column-start: 1;
+        grid-column-end: 7; */
+        grid-column: 1/7;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <header class="header-section"><h1>Header Section</h1></header>
+      <main class="main-section">Main Section</main>
+      <aside class="aside-section">Aside Section</aside>
+      <nav class="nav-section">Nav Section</nav>
+      <section class="section">Section Section</section>
+      <footer class="footer-section"><small>Footer Section</small></footer>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.3.1-grid-lines-grid-column-layout.png" alt="grid-column-start-end" title="grid-column-start-end" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-column-start-end </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `3.3.2-grid-lines-grid-column-layout.html`
+
+```css
+.main-container {
+  width: 980px;
+  margin: 0 auto;
+
+  display: grid; /* block level grid container */
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, minmax(70px, auto));
+  grid-gap: 20px;
+}
+
+.main-container > * {
+  background-color: #ffaf5f;
+  padding: 20px;
+}
+
+.header-section {
+  background-color: #e08931;
+  /* grid-column-start: 1;
+  grid-column-end: 7; */
+  grid-column: 1/7;
+}
+
+.main-section {
+  /*  grid-column-start: 2;
+  grid-column-end: 6; */
+  grid-column: 2/6;
+}
+
+.aside-section {
+  /* grid-column-start: 1;
+  grid-column-end: 4; */
+  grid-column: 1/4;
+}
+
+.nav-section {
+  /* grid-column-start: 4;
+  grid-column-end: 7; */
+  grid-column: 4/7;
+}
+
+.section {
+  /* grid-column-start: 2;
+  grid-column-end: 6; */
+  grid-column: 2/6;
+}
+
+.footer-section {
+  background-color: #e08931;
+  /* grid-column-start: 1;
+  grid-column-end: 7; */
+  grid-column: 1/7;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.3.2-grid-lines-grid-column-layout.png" alt="grid-column-start-end" title="grid-column-start-end" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-column-start-end </figcaption>
   </figure>
 </p>
