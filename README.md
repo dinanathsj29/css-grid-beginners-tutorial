@@ -65,6 +65,7 @@ Topics included/covered
     - 2.8. [Grid Gap](#28-grid-gap)
     - 2.9. [Grid Template Areas](#29-grid-template-areas)
     - 2.10. [Grid Template](#210-grid-template)
+    - 2.11. [Nested Grid](#211-nested-grid)
 
 3. [CSS Grid Item Properties](#3-css-grid-item-properties)
     - 3.1. [Grid Lines - Columns](#31-grid-lines-columns)
@@ -1549,6 +1550,183 @@ Let's look into some of the important properties used with Grid Container:
   - none - sets all three properties to their initial values
 }
 ```
+
+2.11. Nested Grid
+---------------------
+
+> **Syntax & Example**: `2.11-nested-grid-template.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.11-nested-grid-template.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #000000;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 980px;
+        margin: 0 auto;
+      
+        display: grid; /* block level grid container */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        
+        grid-template-areas: 
+          "headerArea headerArea headerArea headerArea"
+          "mainArea mainArea asideArea asideArea"
+          "mainArea mainArea navArea navArea"
+          "sectionArea sectionArea sectionArea sectionArea"
+          "footerArea footerArea footerArea footerArea";
+      }
+
+      .main-container > * {
+        background-color: #e6ba6c;
+        padding: 20px;
+      }
+
+      .header-section {
+        grid-area: headerArea;
+        background-color: #bd7b04;
+      }
+
+      .main-section {
+        grid-area: mainArea;
+      }
+
+      .section {
+        grid-area: sectionArea;
+      }
+
+      .aside-section {
+        grid-area: asideArea;
+      }
+
+      .nav-section {
+        grid-area: navArea;
+      }
+
+      .footer-section {
+        grid-area: footerArea;
+        background-color: #bd7b04;
+      }
+
+      .nested-grid-container {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 150px;
+        grid-gap:10px;
+      }
+
+      .nested-grid-container article{
+        background-color: #bb8b34;
+        padding:10px;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <header class="header-section"><h1>Header Section</h1></header>
+      
+      <main class="main-section">
+        <strong>Main Section with Nested Sub Section</strong>
+
+        <section class="nested-grid-container">
+          <article class="article1">Article 1</article>
+          <article class="article2">Article 2</article>
+          <article class="article3">Article 3</article>
+          <article class="article4">Article 4</article>
+        </section>
+
+      </main>
+
+      <section class="section">Section Section</section>
+      <aside class="aside-section">Aside Section</aside>
+      <nav class="nav-section">Nav Section</nav>
+      <footer class="footer-section"><small>Footer Section</small></footer>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.11.1-nested-grid-template.png" alt="Netsted grid template web layout" title="Netsted grid template web layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Netsted grid template web layout </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+```css
+.nested-grid-container {
+  margin-top: 20px;
+  display: grid;
+  /*  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 150px; */
+  grid-gap:10px;
+
+  /* */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 150px;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.11.2-nested-grid-template.png" alt="Netsted grid template web layout" title="Netsted grid template web layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Netsted grid template web layout </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+```css
+.nested-grid-container {
+  margin-top: 20px;
+  display: grid;
+  /*  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 150px; */
+  grid-gap:10px;
+
+  /* */
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 150px; */
+
+  /* */
+  grid-template-columns: 1fr 1fr;
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/2.11.3-nested-grid-template.png" alt="Netsted grid template web layout" title="Netsted grid template web layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Netsted grid template web layout </figcaption>
+  </figure>
+</p>
 
 3 CSS Grid Item Properties
 ===================== 
