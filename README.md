@@ -74,6 +74,9 @@ Topics included/covered
     - 3.4. [Grid Lines - Grid Row](#34-grid-lines-grid-row)
     - 3.5. [Alignment and Justifying items](#35-alignment-and-justifying-items)
 
+4. [CSS Grid Practical Demo Examples](#4-css-grid-practical-demo-examples)
+    - 4.1. [Mosaic Layout](#41-mosaic-layout)
+
 1 Introduction to CSS Grid
 =====================
 
@@ -2786,5 +2789,124 @@ Let us look into the some of the important properties used with and applicable t
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.5.3-grid-design-justify-align.png" alt="grid design with justify and align" title="grid design with justify and align" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - grid design with justify and align </figcaption>
+  </figure>
+</p>
+
+4 CSS Grid Practical Demo Examples
+=====================  
+
+4.1. Mosaic Layout
+---------------------
+
+> **Syntax & Example**: `4.1-demo-mosaic-layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.1-demo-mosaic-layout.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        width: 1000px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+      }
+
+      .item {
+        background-color: #1e90ff;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem;
+        text-align: center;
+      }
+
+      .item-1 {
+        grid-column: 1/3;
+        grid-row: 1/5;
+      }
+
+      .item-2 {
+        grid-column: 3/7;
+        grid-row: 1/3;
+      }
+
+      .item-3 {
+        grid-column: 3/5;
+        grid-row: 3/5;
+      }
+
+      .item-4 {
+        grid-column: 5/7;
+        grid-row: 3/7;
+      }
+
+      .item-5 {
+        grid-column: 1/5;
+        grid-row: 5/7;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.1.1-demo-mosaic-layout.png" alt="Demo Example: Grid Mosaic Layout" title="Demo Example: Grid Mosaic Layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Grid Mosaic Layout </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+```css
+.main-container {
+  width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap: 10px;
+
+  transform: rotate(45deg) scale(0.5);  
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.1.2-demo-mosaic-layout-transform-rotate.png" alt="Demo Example: Grid Mosaic Layout Transform Rotate" title="Demo Example: Grid Mosaic Layout Transform Rotate" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Grid Mosaic Layout Transform Rotate </figcaption>
   </figure>
 </p>
