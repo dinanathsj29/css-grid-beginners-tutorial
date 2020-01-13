@@ -77,7 +77,8 @@ Topics included/covered
 4. [CSS Grid Practical Demo Examples](#4-css-grid-practical-demo-examples)
     - 4.1. [Mosaic Layout](#41-mosaic-layout)
     - 4.2. [Responsive Grid Layout](#42-responsive-grid-layout)
-
+    - 4.3. [Create Custom 12 Column Grid Framework](#43-custom-12-column-grid)
+ 
 1 Introduction to CSS Grid
 =====================
 
@@ -3069,5 +3070,239 @@ Let us look into the some of the important properties used with and applicable t
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.2.3-demo-responsive-layout-mobile-enhanced.png" alt="Demo Example: Responsive Grid Layout Mobile enahnced view" title="Demo Example: Responsive Grid Layout Mobile enahnced view" width="300" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Responsive Grid Layout Mobile enahnced view </figcaption>
+  </figure>
+</p>
+
+4.3. Custom 12 Column Grid
+---------------------
+4.3. Create Custom 12 Column Grid Layout/Framework
+---------------------
+
+> **Syntax & Example**: `4.3-demo-custom-12-column-grid-framework.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.3-demo-custom-12-column-grid-framework.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 960px;
+        margin: 0 auto;
+      
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+      }
+
+      .main-container > * {
+        background-color: #b5b5b5;
+        padding: 20px;
+      }
+
+      .header-section {
+        background-color: #5b5b5b;
+        grid-column: 1/13;
+      }
+
+      .main-section {
+       grid-column: 5/13;
+       grid-row: 2/4;
+      }
+      
+      .aside-section {
+        grid-column: 1/5;
+      }
+
+      .nav-section {
+        grid-column: 1/5;
+      }
+
+      .section {
+        grid-column: 1/13;
+        grid-row: 4/6;
+      }
+
+      .footer-section {
+        background-color: #5b5b5b;
+        grid-column: 1/13;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <header class="header-section"><h1>Header Section</h1></header>
+      <main class="main-section">Main Section</main>
+      <aside class="aside-section">Aside Section</aside>
+      <nav class="nav-section">Nav Section</nav>
+      <section class="section">Section Section</section>
+      <footer class="footer-section"><small>Footer Section</small></footer>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.3.1-demo-grid-column-row-layout.png" alt="Demo Example: Grid Column Row Layout" title="Demo Example: Grid Column Row Layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Grid Column Row Layout </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.3-demo-custom-12-column-grid-framework.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 960px;
+        margin: 0 auto;
+      
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+
+        /* 4.3.2 custom 12 columner grid */
+        position: relative;
+      }
+
+      /* 4.3.2 custom columner grid */
+      #custom-grid-overlay-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(100%, auto);
+          
+        position: absolute;
+        width: 100%;
+        height: 100%; 
+        background: transparent;
+        padding: 0;
+        margin: 0;
+      }
+
+      #custom-grid-overlay-container div {
+        opacity: 0.25;
+        border: 1px solid #ffffff;
+      }
+
+      /* */
+      .main-container > * {
+        background-color: #b5b5b5;
+        padding: 20px;
+      }
+
+      .header-section {
+        background-color: #5b5b5b;
+        grid-column: 1/13;
+      }
+
+      .main-section {
+       grid-column: 5/13;
+       grid-row: 2/4;
+      }
+      
+      .aside-section {
+        grid-column: 1/5;
+      }
+
+      .nav-section {
+        grid-column: 1/5;
+      }
+
+      .section {
+        grid-column: 1/13;
+        grid-row: 4/6;
+      }
+
+      .footer-section {
+        background-color: #5b5b5b;
+        grid-column: 1/13;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+
+      <!-- /* 4.3.2 custom 12 columner grid */ -->
+      <section id="custom-grid-overlay-container">
+        <div>Column <br/> 1</div>
+        <div>Column <br/> 2</div>
+        <div>Column <br/> 3</div>
+        <div>Column <br/> 4</div>
+        <div>Column <br/> 5</div>
+        <div>Column <br/> 6</div>
+        <div>Column <br/> 7</div>
+        <div>Column <br/> 8</div>
+        <div>Column <br/> 9</div>
+        <div>Column <br/> 10</div>
+        <div>Column <br/> 11</div>
+        <div>Column <br/> 12</div>
+      </section>
+
+      <!-- Basic layout -->
+      <header class="header-section"><h1>Header Section</h1></header>
+      <main class="main-section">Main Section</main>
+      <aside class="aside-section">Aside Section</aside>
+      <nav class="nav-section">Nav Section</nav>
+      <section class="section">Section Section</section>
+      <footer class="footer-section"><small>Footer Section</small></footer>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.3.2-demo-custom-12-column-grid-framework.png" alt="Demo Example: Custom 12 column grid layout framework" title="Demo Example: Custom 12 column grid layout framework" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Custom 12 column grid layout framework </figcaption>
   </figure>
 </p>
