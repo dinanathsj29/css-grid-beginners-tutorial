@@ -76,6 +76,7 @@ Topics included/covered
 
 4. [CSS Grid Practical Demo Examples](#4-css-grid-practical-demo-examples)
     - 4.1. [Mosaic Layout](#41-mosaic-layout)
+    - 4.2. [Responsive Grid Layout](#42-responsive-grid-layout)
 
 1 Introduction to CSS Grid
 =====================
@@ -2908,5 +2909,165 @@ Let us look into the some of the important properties used with and applicable t
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.1.2-demo-mosaic-layout-transform-rotate.png" alt="Demo Example: Grid Mosaic Layout Transform Rotate" title="Demo Example: Grid Mosaic Layout Transform Rotate" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Grid Mosaic Layout Transform Rotate </figcaption>
+  </figure>
+</p>
+
+4.2. Responsive Grid Layout
+---------------------
+
+> **Syntax & Example**: `4.2-demo-responsive-grid-layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.2-demo-responsive-grid-layout.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      /* Desktop view */
+      @media screen and (min-width: 760px){
+
+        .main-container {
+          width: 980px;
+          margin: 0 auto;
+
+          display: grid; /* block level grid container */
+          grid-template-columns: repeat(4, 1fr);
+          grid-auto-rows: minmax(80px, auto);
+          grid-gap: 20px;
+
+          grid-template-areas: 
+            "headerArea headerArea headerArea headerArea"
+            "asideArea asideArea mainArea mainArea "
+            "navArea navArea mainArea mainArea "
+            "sectionArea sectionArea sectionArea sectionArea"
+            "sectionArea sectionArea sectionArea sectionArea"
+            "footerArea footerArea footerArea footerArea";
+        }
+      }
+
+      .main-container > * {
+        background-color: #00bcd4;
+        padding: 20px;
+      }
+
+      .header-section {
+        grid-area: headerArea;
+        background-color: #0199ad;
+      }
+
+      .main-section {
+        grid-area: mainArea;
+      }
+
+      .section {
+        grid-area: sectionArea;
+      }
+
+      .aside-section {
+        grid-area: asideArea;
+      }
+
+      .nav-section {
+        grid-area: navArea;
+      }
+
+      .footer-section {
+        grid-area: footerArea;
+        background-color: #0199ad;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <header class="header-section"><h1>Header Section</h1></header>
+      <main class="main-section">Main Section</main>
+      <section class="section">Section Section</section>
+      <aside class="aside-section">Aside Section</aside>
+      <nav class="nav-section">Nav Section</nav>
+      <footer class="footer-section"><small>Footer Section</small></footer>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.2.1-demo-responsive-layout-desktop.png" alt="Demo Example: Responsive Grid Layout Desktop view" title="Demo Example: Responsive Grid Layout Desktop view" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Responsive Grid Layout Desktop view </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.2.2-demo-responsive-layout-mobile-basic.png" alt="Demo Example: Responsive Grid Layout Mobile Basic view" title="Demo Example: Responsive Grid Layout Mobile Basic view" width="300" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Responsive Grid Layout Mobile Basic view </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+```css
+/* Mobile basic view is defualt, we get just after applying desktop media query */
+
+/* Mobile enhanced view */
+@media screen and (max-width: 760px) {
+
+  body {
+    font-size: 2rem;
+  }
+
+  .main-container > * {
+    padding: 40px !important;
+  }
+  
+  .main-container {
+    width: 980px;
+    margin: 0 auto;
+
+    display: grid; /* block level grid container */
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 30px;
+
+    grid-template-areas: 
+      "headerArea headerArea headerArea headerArea"
+      "footerArea footerArea footerArea footerArea"
+      "mainArea mainArea mainArea mainArea"
+      "mainArea mainArea mainArea mainArea"
+      "asideArea asideArea navArea navArea"
+      "sectionArea sectionArea sectionArea sectionArea"
+      "sectionArea sectionArea sectionArea sectionArea";
+  }
+}
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.2.3-demo-responsive-layout-mobile-enhanced.png" alt="Demo Example: Responsive Grid Layout Mobile enahnced view" title="Demo Example: Responsive Grid Layout Mobile enahnced view" width="300" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Responsive Grid Layout Mobile enahnced view </figcaption>
   </figure>
 </p>
