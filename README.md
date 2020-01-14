@@ -78,6 +78,8 @@ Topics included/covered
     - 4.1. [Mosaic Layout](#41-mosaic-layout)
     - 4.2. [Responsive Grid Layout](#42-responsive-grid-layout)
     - 4.3. [Create Custom 12 Column Grid Framework](#43-custom-12-column-grid)
+    
+5. [CSS Grid Resources](#5-css-grid-resources)
  
 1 Introduction to CSS Grid
 =====================
@@ -3306,3 +3308,10 @@ Let us look into the some of the important properties used with and applicable t
     <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Custom 12 column grid layout framework </figcaption>
   </figure>
 </p>
+
+5 CSS Grid Resources
+=====================  
+
+> **Reference:** - https://www.w3schools.com/css/css_grid.asp
+
+> **Reference**: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
