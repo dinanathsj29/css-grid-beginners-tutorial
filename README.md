@@ -158,6 +158,9 @@ Let's learn some of the Important Terminology/concepts related to CSS Grid Layou
 8. **`Grid Cell`** (A box/intersection point where the column and row get insects it creates a box/cell like a table cell, A grid cell is the space between 2 adjacent row grid lines and 2 adjacent column grid lines)
 9. **`Grid Area`** (The total space surrounded by four grid lines, A grid area is made up of 1 or more grid cells, and is bound by 4 grid lines on each side of the grid area. CSS property is *grid-item = `grid-area`, grid-container = `grid-template-areas`*)
 10. **`The fr Unit`** (The new `fr unit` represents a fraction of the available space in the grid container. CSS property is *`grid-template-columns/rows: 1fr 1fr 1fr`*)
+11. **`Explicit Column/Row`** Any Column or Row created as per needs and requirements with property `grid-template-columns` and `grid-template-rows` respectively (Explicit = Developer or User defines how many Columns or Rows required)  
+12. **`Implicit Column/Row`** Auto-generated Column/Row. `grid-auto-columns` and `grid-auto-rows` property used to handle/control/size any auto-generated grid tracks ie. implicit grid (Implicit = Automatically generated Column/Row. [Total Grid Items are 10, we defined 2 columns and 2 Rows with `grid-template-columns` and `grid-template-rows` property, so 4 items are `Explicit` and rest 6 items are `Implicit`])
+
 
 To start with CSS Grid just apply a property `display` type of `grid` to the parent container/Grid Container (grid container), so Grid Items/child items/elements automatically turn to the grid item.
 
