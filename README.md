@@ -3944,3 +3944,11 @@ Let us look into the some of the important properties used with and applicable t
 > **Reference:** - https://www.w3schools.com/css/css_grid.asp
 
 > **Reference**: - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+
+> **Reference:** - https://css-tricks.com/snippets/css/complete-guide-grid/
+
+> **Reference**: - https://tympanus.net/codrops/css_reference/grid/
+
+> **Reference:** - https://gridbyexample.com/what/
+
+> **Reference**: - https://learncssgrid.com/
