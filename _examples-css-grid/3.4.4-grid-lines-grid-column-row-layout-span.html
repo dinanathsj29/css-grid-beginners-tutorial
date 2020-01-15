@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.4.4-grid-lines-grid-column-row-layout-span.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 980px;
+        margin: 0 auto;
+      
+        display: grid; /* block level grid container */
+        grid-template-columns: repeat(4, 1fr 1fr);
+        grid-template-rows: repeat(10, 60px);
+        grid-gap: 10px;
+      }
+
+      .main-container > * {
+        background-color:#00bfff;
+        padding: 20px;
+        border: 2px solid #0000004f;
+      }
+
+      .item {
+        /* display: grid;
+        justify-content: center;
+        align-items: center; */
+      }
+
+      .item1 {
+        /* grid-column: 2 / 4; */
+        grid-column: 2 / span 2;
+      }
+
+      .item2 {
+        /* grid-column: 4 / -1; */
+        grid-column: 4 / span 5;
+      }
+
+      .item3, .item4 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .item6, .item8 {
+        grid-row: span 2;
+      }
+
+      .item11 {
+        grid-column: 1 / -1;
+        /* grid-column: 1 / span 8; */
+      }
+
+      .item12, .item14  {
+        grid-column: span 3;
+        grid-row: span 3;
+      }
+
+      .item13, .item15  {
+        grid-row: span 3;
+      }
+
+      .item16, .item17 {
+        grid-column: span 4;
+      }
+
+      .item18 {
+        grid-column: 2 / span 6;
+      }
+
+      .item19 {
+        grid-column: 1 / span 8;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item1">Item 1 LOGO </div>
+      <div class="item item2">Item 2 NAVIGATION BAR </div>
+      <div class="item item3">Item 3</div>
+      <div class="item item4">Item 4</div>
+      <div class="item item5">Item 5</div>
+      <div class="item item6">Item 6</div>
+      <div class="item item7">Item 7</div>
+      <div class="item item8">Item 8</div>
+      <div class="item item9">Item 9</div>
+      <div class="item item10">Item 10</div>
+      <div class="item item11">Item 11</div>
+      <div class="item item12">Item 12</div>
+      <div class="item item13">Item 13</div>
+      <div class="item item14">Item 14</div>
+      <div class="item item15">Item 15</div>
+      <div class="item item16">Item 16</div>
+      <div class="item item17">Item 17</div>
+      <div class="item item18">Item 18</div>
+      <div class="item item19">Item 19</div>
+      <div class="item item20">Item 20</div>
+      <div class="item item21">Item 21</div>
+      <div class="item item22">Item 22</div>
+      <div class="item item23">Item 23</div>
+      <div class="item item24">Item 24</div>
+      <div class="item item25">Item 25</div>
+      <div class="item item26">Item 26</div>
+      <div class="item item27">Item 27</div>
+      <div class="item item28">Item 28</div>
+      <div class="item item29">Item 29</div>
+      <div class="item item30">Item 30</div>
+    </div>
+    
+  </body>
+  
+</html>
