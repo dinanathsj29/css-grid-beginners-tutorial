@@ -79,6 +79,7 @@ Topics included/covered
     - 4.2. [Responsive Grid Layout](#42-responsive-grid-layout)
     - 4.3. [Create Custom 12 Column Grid Framework](#43-custom-12-column-grid)
     - 4.4. [Columner Layout with Auto Flow Dense](#44-columner-layout-with-auto-flow-dense)
+    - 4.5. [Grid Card Layout](#45-grid-card-layout)
     
 5. [CSS Grid Resources](#5-css-grid-resources)
  
@@ -3762,6 +3763,177 @@ Let us look into the some of the important properties used with and applicable t
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.4.2-demo-grid-auto-flow-dense.png" alt="Demo Example: Columner Layout with Auto-flow: dense" title="Demo Example: Columner Layout with Auto-flow: dense" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Columner Layout with Auto-flow: dense </figcaption>
+  </figure>
+</p>
+
+4.5. Grid Card Layout
+---------------------
+
+> **Syntax & Example**: `4.5-demo-grid-card-layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.5-demo-grid-card-layout.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .main-container {
+        width: 960px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* grid-auto-rows: minmax(300px, auto); */
+        grid-gap: 10px;
+      }
+
+      .card {
+        color: #000000;
+        border: 2px solid #000000;
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: left;
+      }
+
+      .card .logo-holder{
+        background-color: #ffdab9;
+        height: 5em;
+        margin-bottom: 1em;
+      }
+
+      .card .header{
+        color: #ffb470;
+        font-size: 1.25em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+      }
+
+      .card .article{
+        color:#ddb470;
+        font-size: 0.75em;
+      }
+
+      .card2 .logo-holder{
+        height: 7em;
+      }
+
+      .card3 .logo-holder{
+        height: 9em;
+      }
+
+      .card4 .logo-holder{
+        height: 11em;
+      }
+
+      .card6 .logo-holder, .card7 .logo-holder{
+        height: 9em;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+
+      <div class="card card1">
+        <section class="logo-holder"></section>
+        <header class="header">Card1 Heading</header>
+        <article class="article">
+          This is dummy teaser text.
+        </article>
+      </div>
+
+      <div class="card card2">
+        <section class="logo-holder"></section>
+        <header class="header">Card2 Headline Logo content</header>
+        <article class="article">
+          This is dummy teaser text. It may varies card to card.
+        </article>
+      </div>
+
+      <div class="card card3">
+        <section class="logo-holder"></section>
+        <header class="header">Card3 Heading</header>
+        <article class="article">
+          This is dummy teaser text. It may varies card to card. This is dummy teaser text.
+        </article>
+      </div>
+
+      <div class="card card4">
+        <section class="logo-holder"></section>
+        <header class="header">Card4 Heading</header>
+        <article class="article">
+          This is dummy teaser text. It may varies card to card. 
+          This is dummy teaser text. It may varies card to card.
+        </article>
+      </div>
+
+      <div class="card card5">
+        <section class="logo-holder"></section>
+        <header class="header">Card5 Heading & Logo Wrapper</header>
+        <article class="article">
+          This is dummy teaser text. It may varies card to card. 
+          This is dummy teaser text. It may varies card to card.  
+          This is dummy teaser text. 
+        </article>
+      </div>
+
+      <div class="card card6">
+        <section class="logo-holder"></section>
+        <header class="header">Card6 Heading</header>
+        <article class="article">
+          This is dummy teaser text. It may varies card to card. 
+          This is dummy teaser text. It may varies card to card. 
+          This is dummy teaser text. It may varies card to card.
+        </article>
+      </div>
+
+      <div class="card card7">
+        <section class="logo-holder"></section>
+        <header class="header">Card7 Heading</header>
+        <article class="article">
+          This is dummy teaser text. It may varies card to card. 
+          This is dummy teaser text. It may varies card to card. 
+          This is dummy teaser text. It may varies card to card. 
+          This is dummy teaser text. 
+        </article>
+      </div>
+
+      <div class="card card8"><section class="logo-holder"></section>
+        <header class="header">Card8 Heading</header>
+        <article class="article">
+          This is dummy teaser text. It may varies card to card.
+          This is dummy teaser text. It may varies card to card.
+          This is dummy teaser text. It may varies card to card.
+          This is dummy teaser text. It may varies card to card.
+        </article>
+      </div>
+
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.5-demo-grid-card-layout.png" alt="Demo Example: Card Layout" title="Demo Example: Card Layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Card Layout </figcaption>
   </figure>
 </p>
 
