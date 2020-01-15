@@ -3600,6 +3600,8 @@ Let us look into the some of the important properties used with and applicable t
 4.4. Columner Layout with Auto Flow Dense
 ---------------------
 
+> **Syntax & Example**: `4.4-demo-grid-auto-flow-dense.html`
+
 ```html
 <!DOCTYPE html>
 
@@ -3609,7 +3611,7 @@ Let us look into the some of the important properties used with and applicable t
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>4.3-demo-custom-12-column-grid-framework.html</title>
+    <title>4.4-demo-grid-auto-flow-dense.html</title>
 
     <style type="text/css">
 
