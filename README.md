@@ -80,6 +80,7 @@ Topics included/covered
     - 4.3. [Create Custom 12 Column Grid Framework](#43-custom-12-column-grid)
     - 4.4. [Columner Layout with Auto Flow Dense](#44-columner-layout-with-auto-flow-dense)
     - 4.5. [Grid Card Layout](#45-grid-card-layout)
+    - 4.6. [Grid Card Nested Layout](#45-grid-card-nested-layout)
     
 5. [CSS Grid Resources](#5-css-grid-resources)
  
@@ -3934,6 +3935,187 @@ Let us look into the some of the important properties used with and applicable t
   <figure>
     &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.5-demo-grid-card-layout.png" alt="Demo Example: Card Layout" title="Demo Example: Card Layout" width="1000" border="2" />
     <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Card Layout </figcaption>
+  </figure>
+</p>
+
+4.6. Grid Card Nested Layout
+---------------------
+
+> **Syntax & Example**: `4.6-demo-grid-card-nested-layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.6-demo-grid-card-nested-layout.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+      }
+
+      .grid-layout-container {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      .main-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(165px, auto);
+        grid-gap: 10px;
+      }
+
+      .card {
+        display: grid;
+        grid-template-columns: repeat(1, 130px 1fr);
+        /* grid-auto-rows: minmax(300px, auto); */
+        grid-gap: 10px;
+
+        color: #000000;
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: left;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+
+        -ms-box-shadow: 0 2px 2px rgba(0,0,0,.075);
+        -moz-box-shadow: 0 2px 2px rgba(0,0,0,.075);
+        -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.075);
+        box-shadow: 0 2px 2px rgba(0,0,0,.075);
+      }
+
+      .card .header{
+        color:#428bca;
+        font-size: 1.25em;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+      }
+
+      .card .article{
+        color:#666666;
+        font-size: 0.75em;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="grid-layout-container">
+
+      <h1>Enable CSS Grid Layout</h1>
+      <p>CSS Grid Layout enabled different browser version:</p>
+
+      <div class="main-container">
+      
+        <div class="card card1">
+          <section class="logo-holder">
+            <img src="../_images-css-grid/4.6-images/chrome.png" alt="chrome">
+          </section>
+
+          <section class="text-contaner">
+            <header class="header">Chrome</header>
+            <article class="article">
+              Enabled by default since version 57
+            </article>
+          </section>
+
+        </div>
+
+        <div class="card card2">
+          <section class="logo-holder">
+            <img src="../_images-css-grid/4.6-images/firefox.png" alt="firefox">
+          </section>
+
+          <section class="text-contaner">
+            <header class="header">Firefox</header>
+            <article class="article">
+              Enabled by default since version 52
+            </article>
+          </section>
+          
+        </div>
+
+        <div class="card card3">
+          <section class="logo-holder">
+            <img src="../_images-css-grid/4.6-images/internet-explorer.png" alt="internet-explorer">
+          </section>
+
+          <section class="text-contaner">
+            <header class="header">Internet-Explorer</header>
+            <article class="article">
+              Enabled by default since IE10 (old syntax)
+            </article>
+          </section>
+          
+        </div>
+
+        <div class="card card4">
+          <section class="logo-holder">
+            <img src="../_images-css-grid/4.6-images/opera.png" alt="opera">
+          </section>
+          
+          <section class="text-contaner">
+            <header class="header">Opera</header>
+            <article class="article">
+              Enabled by default since version 44
+            </article>
+          </section>
+          
+        </div>
+
+        <div class="card card5">
+          <section class="logo-holder">
+            <img src="../_images-css-grid/4.6-images/safari.png" alt="safari">
+          </section>
+          
+          <section class="text-contaner">
+            <header class="header">Safari</header>
+            <article class="article">
+              Enabled by default since version 10.1
+            </article>
+          </section>
+          
+        </div>
+
+        <div class="card card6">
+          <section class="logo-holder">
+            <img src="../_images-css-grid/4.6-images/epiphany.png" alt="epiphany">
+          </section>
+          
+          <section class="text-contaner">
+            <header class="header">Epiphany</header>
+            <article class="article">
+              Enabled by default since version 3.24
+            </article>
+          </section>
+          
+        </div>
+
+      </div>
+
+  </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/4.6-demo-grid-card-nested-layout.png" alt="Demo Example: Card Nested Layout" title="Demo Example: Card Nested Layout" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - Demo Example: Card Nested Layout </figcaption>
   </figure>
 </p>
 
