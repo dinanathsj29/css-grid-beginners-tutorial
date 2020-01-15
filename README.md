@@ -2633,6 +2633,290 @@ Let us look into the some of the important properties used with and applicable t
   </figure>
 </p>
 
+<hr/>
+
+> **Syntax & Example**: `3.4.3-grid-lines-grid-column-row-layout-span.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.4.3-grid-lines-grid-column-row-layout-span.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 980px;
+        margin: 0 auto;
+      
+        display: grid; /* block level grid container */
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, minmax(70px, auto));
+        grid-gap: 20px;
+      }
+
+      .main-container > * {
+        background-color: #ddd459;
+        padding: 20px;
+      }
+
+      .header-section {
+        background-color:#aaa459;
+        /* grid-column-start: 1;
+        grid-column-end: 7; */
+        
+        /* grid-column: 1/7; */
+        
+        /* grid-column: 1 / -1; */ /* Negative ie -1 is used for last-till end column/row */
+        /* grid-column: span 6; */ /* cover-span 6 columns/row */
+        grid-column: 1 / span 6; /* start from 1st track and cover-span 6 */
+      }
+
+      .main-section {
+        /* grid-column-start: 2;
+        grid-column-end: 6; */
+        
+        /* grid-column: 2/6; */
+
+        grid-column: 2 / span 4;
+      }
+      
+      .aside-section {
+        /* grid-column-start: 1;
+        grid-column-end: 4;
+
+        grid-row-start: 3;
+        grid-row-end: 5; */
+        
+        /* grid-column: 1/4;
+        grid-row:3/5; */
+        
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 2;
+      }
+
+      .nav-section {
+       /*  grid-column-start: 4;
+        grid-column-end: 7;
+        
+        grid-row-start: 3;
+        grid-row-end: 5; */
+        
+        /* grid-column: 4/7;
+        grid-row: 3/5; */
+
+        grid-column: 4 / span 3;
+        grid-row: 3 / span 2;
+      }
+
+      .section {
+        /* grid-column-start: 2;
+        grid-column-end: 6; */
+        
+        /* grid-column: 2/6; */
+
+        grid-column: 2 / span 4;
+      }
+
+      .footer-section {
+        background-color:#aaa459;
+        /* grid-column-start: 1;
+        grid-column-end: 7; */
+        
+        /* grid-column: 1/7; */
+
+        /* grid-column: 1 / -1; */ 
+        /* grid-column: span 6; */ 
+        
+        grid-column: 1 / span 6;  
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <header class="header-section"><h1>Header Section</h1></header>
+      <main class="main-section">Main Section</main>
+      <aside class="aside-section">Aside Section</aside>
+      <nav class="nav-section">Nav Section</nav>
+      <section class="section">Section Section</section>
+      <footer class="footer-section"><small>Footer Section</small></footer>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.4.3-grid-lines-grid-column-row-layout-span.png" alt="grid-column-row with span" title="grid-column-row with span" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-column-row with span </figcaption>
+  </figure>
+</p>
+
+<hr/>
+
+> **Syntax & Example**: `3.4.4-grid-lines-grid-column-row-layout-span.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3.4.4-grid-lines-grid-column-row-layout-span.html</title>
+
+    <style type="text/css">
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+
+        color: #ffffff;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .main-container {
+        width: 980px;
+        margin: 0 auto;
+      
+        display: grid; /* block level grid container */
+        grid-template-columns: repeat(4, 1fr 1fr);
+        grid-template-rows: repeat(10, 60px);
+        grid-gap: 10px;
+      }
+
+      .main-container > * {
+        background-color:#00bfff;
+        padding: 20px;
+        border: 2px solid #0000004f;
+      }
+
+      .item {
+        /* display: grid;
+        justify-content: center;
+        align-items: center; */
+      }
+
+      .item1 {
+        /* grid-column: 2 / 4; */
+        grid-column: 2 / span 2;
+      }
+
+      .item2 {
+        /* grid-column: 4 / -1; */
+        grid-column: 4 / span 5;
+      }
+
+      .item3, .item4 {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .item6, .item8 {
+        grid-row: span 2;
+      }
+
+      .item11 {
+        grid-column: 1 / -1;
+        /* grid-column: 1 / span 8; */
+      }
+
+      .item12, .item14  {
+        grid-column: span 3;
+        grid-row: span 3;
+      }
+
+      .item13, .item15  {
+        grid-row: span 3;
+      }
+
+      .item16, .item17 {
+        grid-column: span 4;
+      }
+
+      .item18 {
+        grid-column: 2 / span 6;
+      }
+
+      .item19 {
+        grid-column: 1 / span 8;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="main-container">
+      <div class="item item1">Item 1 LOGO </div>
+      <div class="item item2">Item 2 NAVIGATION BAR </div>
+      <div class="item item3">Item 3</div>
+      <div class="item item4">Item 4</div>
+      <div class="item item5">Item 5</div>
+      <div class="item item6">Item 6</div>
+      <div class="item item7">Item 7</div>
+      <div class="item item8">Item 8</div>
+      <div class="item item9">Item 9</div>
+      <div class="item item10">Item 10</div>
+      <div class="item item11">Item 11</div>
+      <div class="item item12">Item 12</div>
+      <div class="item item13">Item 13</div>
+      <div class="item item14">Item 14</div>
+      <div class="item item15">Item 15</div>
+      <div class="item item16">Item 16</div>
+      <div class="item item17">Item 17</div>
+      <div class="item item18">Item 18</div>
+      <div class="item item19">Item 19</div>
+      <div class="item item20">Item 20</div>
+      <div class="item item21">Item 21</div>
+      <div class="item item22">Item 22</div>
+      <div class="item item23">Item 23</div>
+      <div class="item item24">Item 24</div>
+      <div class="item item25">Item 25</div>
+      <div class="item item26">Item 26</div>
+      <div class="item item27">Item 27</div>
+      <div class="item item28">Item 28</div>
+      <div class="item item29">Item 29</div>
+      <div class="item item30">Item 30</div>
+    </div>
+    
+  </body>
+  
+</html>
+```
+
+<p>
+  <figure>
+    &nbsp;&nbsp;&nbsp; <img src="_images-css-grid/3.4.4-grid-lines-grid-column-row-layout-span.png" alt="grid-column-row with span" title="grid-column-row with span" width="1000" border="2" />
+    <figcaption>&nbsp;&nbsp;&nbsp; Image - grid-column-row with span </figcaption>
+  </figure>
+</p>
+
 3.5. Alignment and Justifying items
 ---------------------
 3.5. Alignment & Justify items - justify-self & align-self
